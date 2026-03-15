@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BWebs | Modern Websites for the Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              noir: '#0a0a0a',
+              neon: '#a855f7',
+              neonSoft: '#c084fc'
+            },
+            boxShadow: {
+              neon: '0 0 0 1px rgba(168,85,247,0.3), 0 0 20px rgba(168,85,247,0.35)',
+              neonStrong: '0 0 0 1px rgba(168,85,247,0.6), 0 0 26px rgba(168,85,247,0.6)'
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-noir text-white antialiased selection:bg-neon/30">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(168,85,247,0.22),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.14),transparent_28%),linear-gradient(#0a0a0a,#050505)]"></div>
+
+    <header class="sticky top-0 z-20 border-b border-neon/20 bg-black/65 backdrop-blur">
+      <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#hero" class="text-2xl font-bold tracking-wide text-neonSoft sm:text-3xl">BWebs</a>
+        <ul class="flex items-center gap-3 text-sm text-white/80">
+          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neonSoft" href="#about">About</a></li>
+          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neonSoft" href="#services">Services</a></li>
+          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neonSoft" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="mx-auto flex min-h-[75vh] w-full max-w-6xl flex-col items-start justify-center px-6 py-20 sm:py-28">
+        <p class="mb-4 inline-flex rounded-full border border-neon/40 bg-neon/10 px-4 py-1 text-xs uppercase tracking-[0.25em] text-neonSoft">Developer Studio</p>
+        <h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">Building modern websites for the future.</h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
+          We craft high-performance, conversion-focused web experiences for startups, businesses, and founders who need a serious digital presence.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#contact" class="cta-button rounded-xl border border-neon/60 bg-neon/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-neonSoft">Start Your Project</a>
+          <a href="#services" class="cta-button rounded-xl border border-white/20 bg-white/[0.02] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white/90 hover:border-neon/60 hover:text-neonSoft">Explore Services</a>
+        </div>
+      </section>
+
+      <section id="about" class="border-y border-neon/15 bg-black/30">
+        <div class="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1fr,1.4fr] md:py-20">
+          <h2 class="text-3xl font-semibold text-neonSoft sm:text-4xl">Who We Are</h2>
+          <div class="space-y-5 text-white/80">
+            <p>
+              We are web developers focused on clean architecture, modern frontend technologies, and measurable business outcomes.
+            </p>
+            <p>
+              Our mission is simple: ship polished websites that load fast, look sharp, and help clients grow with confidence.
+            </p>
+            <p>
+              Every build is crafted with maintainability, accessibility, and long-term quality in mind.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
+        <h2 class="text-3xl font-semibold text-neonSoft sm:text-4xl">Services</h2>
+        <p class="mt-4 max-w-2xl text-white/70">End-to-end solutions tailored to your business goals and product vision.</p>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
+            <h3 class="text-lg font-semibold">Website Development</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">Custom websites built for performance, scalability, and real-world results.</p>
+          </article>
+          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
+            <h3 class="text-lg font-semibold">Frontend Development</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">Interactive interfaces implemented with modern standards and clean code.</p>
+          </article>
+          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
+            <h3 class="text-lg font-semibold">UI/UX Design</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">User-centric layouts that blend visual identity with frictionless usability.</p>
+          </article>
+          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
+            <h3 class="text-lg font-semibold">Website Optimization</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">Speed, SEO, and code quality improvements for stronger online performance.</p>
+          </article>
+          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6 sm:col-span-2 lg:col-span-2">
+            <h3 class="text-lg font-semibold">Custom Web Solutions</h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/70">Purpose-built digital products aligned with your workflows, brand, and growth plans.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="border-t border-neon/15 bg-black/40">
+        <div class="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
+          <h2 class="text-3xl font-semibold text-neonSoft sm:text-4xl">Contact</h2>
+          <p class="mt-4 max-w-2xl text-white/70">Let’s discuss your project and create something exceptional together.</p>
+          <div class="mt-8 grid gap-5 md:grid-cols-[1fr,auto] md:items-center">
+            <div class="content-card rounded-2xl border border-neon/30 bg-white/[0.03] p-6 shadow-neon">
+              <p class="text-sm uppercase tracking-wider text-neonSoft/90">Email</p>
+              <a class="mt-1 block text-lg font-medium transition hover:text-neonSoft" href="mailto:contact@example.com">contact@example.com</a>
+              <p class="mt-5 text-sm uppercase tracking-wider text-neonSoft/90">Phone</p>
+              <a class="mt-1 block text-lg font-medium transition hover:text-neonSoft" href="tel:+123456789">+123456789</a>
+            </div>
+            <a href="mailto:contact@example.com" class="cta-button rounded-xl border border-neon/60 bg-neon/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-neonSoft">Send Message</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-neon/20 py-6 text-center text-sm text-white/55">
+      <p>© <span id="year"></span> BWebs. Crafted for the next generation of the web.</p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
