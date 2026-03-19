@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BWebs | Modern Websites for the Future</title>
+    <link rel="stylesheet" href="./src/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -24,89 +25,168 @@
     </script>
   </head>
   <body class="bg-noir text-white antialiased selection:bg-neon/30">
+    <div class="loading" id="loader">
+      <div class="loading-text" aria-label="Loading BWEBS">
+        <span class="loading-text-words">L</span>
+        <span class="loading-text-words">o</span>
+        <span class="loading-text-words">a</span>
+        <span class="loading-text-words">d</span>
+        <span class="loading-text-words">i</span>
+        <span class="loading-text-words">n</span>
+        <span class="loading-text-words">g</span>
+        <span class="loading-text-words">&nbsp;</span>
+        <span class="loading-text-words">B</span>
+        <span class="loading-text-words">W</span>
+        <span class="loading-text-words">E</span>
+        <span class="loading-text-words">B</span>
+        <span class="loading-text-words">S</span>
+      </div>
+    </div>
+
     <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(168,85,247,0.22),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.14),transparent_28%),linear-gradient(#0a0a0a,#050505)]"></div>
+    <div class="scroll-progress-track" aria-hidden="true">
+      <span id="scroll-progress-bar" class="scroll-progress-bar"></span>
+    </div>
 
     <header class="sticky top-0 z-20 border-b border-neon/20 bg-black/65 backdrop-blur">
-      <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hero" class="text-2xl font-bold tracking-wide text-neonSoft sm:text-3xl">BWebs</a>
-        <ul class="flex items-center gap-3 text-sm text-white/80">
-          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neonSoft" href="#about">About</a></li>
-          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neonSoft" href="#services">Services</a></li>
-          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-neonSoft" href="#contact">Contact</a></li>
+      <nav class="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <a href="#hero" class="inline-flex items-center gap-2 text-2xl font-bold tracking-wide text-neonSoft sm:text-3xl">
+          <span>BWebs</span>
+          <span id="neon-signal" class="neon-signal" data-strength="soft" aria-hidden="true"></span>
+        </a>
+        <ul class="flex w-full flex-wrap items-center justify-start gap-2 text-sm text-white/80 sm:w-auto sm:justify-end sm:gap-3">
+          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-neonSoft sm:px-4 sm:text-xs" href="#about">About</a></li>
+          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-neonSoft sm:px-4 sm:text-xs" href="#services">Services</a></li>
+          <li><a class="nav-link rounded-xl border border-neon/60 bg-neon/15 px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-neonSoft sm:px-4 sm:text-xs" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="hero" class="mx-auto flex min-h-[75vh] w-full max-w-6xl flex-col items-start justify-center px-6 py-20 sm:py-28">
+      <section id="hero" class="hero-section reveal reveal-in mx-auto flex min-h-[75vh] w-full max-w-6xl flex-col items-start justify-center overflow-hidden px-4 py-16 sm:px-6 sm:py-28">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
         <p class="mb-4 inline-flex rounded-full border border-neon/40 bg-neon/10 px-4 py-1 text-xs uppercase tracking-[0.25em] text-neonSoft">Developer Studio</p>
-        <h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">Building modern websites for the future.</h1>
+        <h1 class="hero-title max-w-3xl text-3xl font-bold leading-tight sm:text-6xl">Building modern websites for the future.</h1>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
           We craft high-performance, conversion-focused web experiences for startups, businesses, and founders who need a serious digital presence.
         </p>
-        <div class="mt-9 flex flex-wrap gap-4">
-          <a href="#contact" class="cta-button rounded-xl border border-neon/60 bg-neon/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-neonSoft">Start Your Project</a>
-          <a href="#services" class="cta-button rounded-xl border border-white/20 bg-white/[0.02] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white/90 hover:border-neon/60 hover:text-neonSoft">Explore Services</a>
+        <div class="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
+          <a href="#contact" class="cta-button rounded-xl border border-neon/60 bg-neon/15 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-neonSoft">Start Your Project</a>
+          <a href="#services" class="cta-button rounded-xl border border-white/20 bg-white/[0.02] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wider text-white/90 hover:border-neon/60 hover:text-neonSoft">Explore Services</a>
         </div>
       </section>
 
-      <section id="about" class="border-y border-neon/15 bg-black/30">
-        <div class="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 md:grid-cols-[1fr,1.4fr] md:py-20">
-          <h2 class="text-3xl font-semibold text-neonSoft sm:text-4xl">Who We Are</h2>
-          <div class="space-y-5 text-white/80">
-            <p>
-              We are web developers focused on clean architecture, modern frontend technologies, and measurable business outcomes.
-            </p>
-            <p>
-              Our mission is simple: ship polished websites that load fast, look sharp, and help clients grow with confidence.
-            </p>
-            <p>
-              Every build is crafted with maintainability, accessibility, and long-term quality in mind.
-            </p>
+      <section id="about" class="about-v2 reveal">
+        <div class="about-v2-wrap">
+          <div class="about-v2-lead">
+            <p class="about-v2-eyebrow">About BWebs</p>
+            <h2>We don’t just build websites — we build growth-ready digital assets.</h2>
+            <p class="about-v2-sub">Conversion-focused structure, modern engineering, and premium UX that supports long-term business goals.</p>
+          </div>
+
+          <div class="about-v2-proof">
+            <article class="proof-card" tabindex="0">
+              <p class="proof-kicker">Speed</p>
+              <h3>Performance-first delivery</h3>
+              <p>Optimized front-end architecture ready for scale.</p>
+            </article>
+            <article class="proof-card" tabindex="0">
+              <p class="proof-kicker">Conversion</p>
+              <h3>Clear user flow design</h3>
+              <p>Intentional layouts that guide users toward action.</p>
+            </article>
+            <article class="proof-card" tabindex="0">
+              <p class="proof-kicker">Stack</p>
+              <h3>Modern developer standards</h3>
+              <p>Maintainable codebase with long-term flexibility.</p>
+            </article>
+          </div>
+
+          <div class="about-v2-process" aria-label="Process">
+            <span>Discover</span>
+            <span>Build</span>
+            <span>Launch</span>
           </div>
         </div>
       </section>
 
-      <section id="services" class="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
-        <h2 class="text-3xl font-semibold text-neonSoft sm:text-4xl">Services</h2>
-        <p class="mt-4 max-w-2xl text-white/70">End-to-end solutions tailored to your business goals and product vision.</p>
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
-            <h3 class="text-lg font-semibold">Website Development</h3>
-            <p class="mt-3 text-sm leading-relaxed text-white/70">Custom websites built for performance, scalability, and real-world results.</p>
-          </article>
-          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
-            <h3 class="text-lg font-semibold">Frontend Development</h3>
-            <p class="mt-3 text-sm leading-relaxed text-white/70">Interactive interfaces implemented with modern standards and clean code.</p>
-          </article>
-          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
-            <h3 class="text-lg font-semibold">UI/UX Design</h3>
-            <p class="mt-3 text-sm leading-relaxed text-white/70">User-centric layouts that blend visual identity with frictionless usability.</p>
-          </article>
-          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6">
-            <h3 class="text-lg font-semibold">Website Optimization</h3>
-            <p class="mt-3 text-sm leading-relaxed text-white/70">Speed, SEO, and code quality improvements for stronger online performance.</p>
-          </article>
-          <article class="content-card service-card rounded-2xl border border-neon/25 bg-white/[0.02] p-6 sm:col-span-2 lg:col-span-2">
-            <h3 class="text-lg font-semibold">Custom Web Solutions</h3>
-            <p class="mt-3 text-sm leading-relaxed text-white/70">Purpose-built digital products aligned with your workflows, brand, and growth plans.</p>
-          </article>
+      <section class="services-premium reveal" id="services">
+        <div class="services-wrap">
+          <aside class="services-left">
+            <p class="eyebrow">Services</p>
+            <h2>Web experiences that look premium and convert fast.</h2>
+            <p class="sub">Built for speed, clarity, and measurable growth.</p>
+          </aside>
+
+          <div class="services-right">
+            <article class="svc-card featured" tabindex="0">
+              <span class="tag">Core</span>
+              <h3>Website Development</h3>
+              <p>Custom builds engineered for performance and scale.</p>
+            </article>
+
+            <article class="svc-card" tabindex="0">
+              <span class="tag">UX</span>
+              <h3>UI/UX Design</h3>
+              <p>Clear user flows that reduce friction and increase action.</p>
+            </article>
+
+            <article class="svc-card" tabindex="0">
+              <span class="tag">Frontend</span>
+              <h3>Frontend Engineering</h3>
+              <p>Modern implementation with clean, maintainable code.</p>
+            </article>
+
+            <article class="svc-card" tabindex="0">
+              <span class="tag">Growth</span>
+              <h3>Optimization</h3>
+              <p>Speed, SEO, and conversion tuning for better results.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="contact" class="border-t border-neon/15 bg-black/40">
-        <div class="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
-          <h2 class="text-3xl font-semibold text-neonSoft sm:text-4xl">Contact</h2>
-          <p class="mt-4 max-w-2xl text-white/70">Let’s discuss your project and create something exceptional together.</p>
-          <div class="mt-8 grid gap-5 md:grid-cols-[1fr,auto] md:items-center">
-            <div class="content-card rounded-2xl border border-neon/30 bg-white/[0.03] p-6 shadow-neon">
-              <p class="text-sm uppercase tracking-wider text-neonSoft/90">Email</p>
-              <a class="mt-1 block text-lg font-medium transition hover:text-neonSoft" href="mailto:contact@example.com">contact@example.com</a>
-              <p class="mt-5 text-sm uppercase tracking-wider text-neonSoft/90">Phone</p>
-              <a class="mt-1 block text-lg font-medium transition hover:text-neonSoft" href="tel:+123456789">+123456789</a>
+      <section id="contact" class="contact-premium reveal">
+        <div class="contact-wrap">
+          <div class="contact-intro">
+            <p class="contact-eyebrow">Contact</p>
+            <h2>Let’s build your next high-converting website.</h2>
+            <p class="contact-subtext">Tell us your goals, timeline, and what success looks like. We’ll come back with a focused plan.</p>
+
+            <div class="contact-points">
+              <article class="contact-point">
+                <p class="contact-point-label">Email</p>
+                <a href="mailto:contact@example.com">contact@example.com</a>
+              </article>
+              <article class="contact-point">
+                <p class="contact-point-label">Phone</p>
+                <a href="tel:+123456789">+123456789</a>
+              </article>
             </div>
-            <a href="mailto:contact@example.com" class="cta-button rounded-xl border border-neon/60 bg-neon/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-neonSoft">Send Message</a>
           </div>
+
+          <form id="contact-form" class="contact-form-panel" novalidate>
+            <div class="contact-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required class="form-input" placeholder="Your name" />
+              <p class="form-error hidden">Please enter your name.</p>
+            </div>
+
+            <div class="contact-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required class="form-input" placeholder="you@domain.com" />
+              <p class="form-error hidden">Please enter a valid email address.</p>
+            </div>
+
+            <div class="contact-field">
+              <label for="message">Project Brief</label>
+              <textarea id="message" name="message" rows="5" required class="form-input" placeholder="Briefly describe your project"></textarea>
+              <p class="form-error hidden">Please add a short project message.</p>
+            </div>
+
+            <button type="submit" class="contact-submit">Send Project Request</button>
+          </form>
         </div>
       </section>
     </main>
@@ -116,5 +196,22 @@
     </footer>
 
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      window.addEventListener('load', function () {
+        const loader = document.getElementById('loader')
+        if (!loader) {
+          return
+        }
+
+        setTimeout(() => {
+          loader.style.opacity = '0'
+          loader.style.transition = 'opacity 0.8s ease'
+
+          setTimeout(() => {
+            loader.style.display = 'none'
+          }, 800)
+        }, 2500)
+      })
+    </script>
   </body>
 </html>
